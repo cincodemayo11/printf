@@ -1,0 +1,37 @@
+#include <stdarg.h>
+#include <stdio.h>
+
+int _printf(const char *format, ...)
+{
+va_list list;
+va_start(list, format);
+
+
+while (*format != '\0')
+{
+	if (*format == '%')
+	{
+		format++;
+		if (*format == 'c')
+		{
+			printf("%c", va_arg(list, int));
+		}
+		else if (*format == 's')
+		{
+			printf("%s", va_arg(list, char *));
+		}
+		else if (*format == '%')
+		{
+			printf("%%",);
+		}
+		format++;
+	}
+	else
+	{
+		printf("%c", *format);
+		format++;
+	}
+
+}
+return (0);
+}
