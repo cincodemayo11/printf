@@ -1,5 +1,5 @@
 #include "main.h"
-
+  
 /**
   * _printf - prints output
   * @format: string input
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 				format++;
 				if (*format == 'c')
 				{
-					printf("%c", va_arg(list, int));
+					_putchar(va_arg(list, int));
 					length++;
 				}
 				else if (*format == 's')
@@ -31,14 +31,22 @@ int _printf(const char *format, ...)
 				}
 				else if (*format == '%')
 				{
-					printf("%%");
+					_putchar('%');
 					length++;
+				}/*
+				else if (*format == 'd')
+				{
+					print_digits(va_arg(list, int), length);
 				}
+				else if (*format == 'i')
+				{
+					print_digits(va_arg(list, int), length);
+				}*/
 				format++;
 			}
 			else
 			{
-				printf("%c", *format);
+				_putchar(*format);
 				length++;
 				format++;
 			}
@@ -49,6 +57,18 @@ int _printf(const char *format, ...)
 		length += length;
 	}
 	return (length);
+}
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
 
 /**
@@ -64,8 +84,47 @@ int print_string(char *string, int length)
 
 	for (i = 0; string[i] != '\0'; i++)
 	{
-		putchar(string[i]);
+		_putchar(string[i]);
 		length++;
 	}
 	return (0);
 }
+
+/**
+  * print_digits - prints digits
+  * @digits: digits to be printed
+  * @length: variable to capture digits length
+  *
+  * Return: 0
+  */
+/*int print_digits(digit, length)
+{
+	int i;
+
+	if (digit < 0)
+	{
+		_putchar('-');
+		digit = 
+	}
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
