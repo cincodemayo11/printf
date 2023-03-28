@@ -32,6 +32,14 @@ int _printf(const char *format, ...)
 				{
 					print_string(va_arg(list, char *), length);
 				}
+				else if (*format == 'd')
+				{
+					printf("%d", va_arg(list, int));
+				}
+				else if (*format == 'i')
+				{
+					printf("%i", va_arg(list, int));
+				}
 				else if (*format == '%')
 				{
 					length += _putchar('%');
@@ -82,3 +90,12 @@ int print_string(char *string, int length)
 	}
 	return (0);
 }
+
+/*int print_int(int *number, int length)
+{
+	int i;
+
+	for (i = 1 < length; i++)
+	{
+		number[i] = number[i]/(10^number[i]);
+		}*/

@@ -19,6 +19,7 @@ int main(void)
 	_printf("This is letter %c it is the third one", c);
 	_printf("This is a greeting %s it is used all over", str);
 	_printf("This %% is a percent sign");
-	
+	_printf("Negative:[%d]", -762534);
+	_printf("Negative:[%i]", 567);
 	return (0);
 }
