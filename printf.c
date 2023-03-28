@@ -1,5 +1,5 @@
 #include "main.h"
-  
+
 /**
   * _printf - prints output
   * @format: string input
@@ -20,7 +20,11 @@ int _printf(const char *format, ...)
 			if (*format == '%')
 			{
 				format++;
-				if (*format == 'c')
+				if (*format == ' ')
+				{
+					return (1);
+				}
+				else if (*format == 'c')
 				{
 					_putchar(va_arg(list, int));
 					length++;
@@ -33,15 +37,7 @@ int _printf(const char *format, ...)
 				{
 					_putchar('%');
 					length++;
-				}/*
-				else if (*format == 'd')
-				{
-					print_digits(va_arg(list, int), length);
 				}
-				else if (*format == 'i')
-				{
-					print_digits(va_arg(list, int), length);
-				}*/
 				format++;
 			}
 			else
@@ -54,7 +50,7 @@ int _printf(const char *format, ...)
 	}
 	else
 	{
-		length += length;
+		return (-1);
 	}
 	return (length);
 }
@@ -89,42 +85,3 @@ int print_string(char *string, int length)
 	}
 	return (0);
 }
-
-/**
-  * print_digits - prints digits
-  * @digits: digits to be printed
-  * @length: variable to capture digits length
-  *
-  * Return: 0
-  */
-/*int print_digits(digit, length)
-{
-	int i;
-
-	if (digit < 0)
-	{
-		_putchar('-');
-		digit = 
-	}
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
