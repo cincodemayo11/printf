@@ -34,11 +34,11 @@ int _printf(const char *format, ...)
 				}
 				else if (*format == 'd')
 				{
-					printf("%d", va_arg(list, int));
+					length += printf("%d", va_arg(list, int));
 				}
 				else if (*format == 'i')
 				{
-					printf("%i", va_arg(list, int));
+					length += printf("%i", va_arg(list, int));
 				}
 				else if (*format == '%')
 				{
