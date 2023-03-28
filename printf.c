@@ -26,8 +26,7 @@ int _printf(const char *format, ...)
 				}
 				else if (*format == 'c')
 				{
-					_putchar(va_arg(list, int));
-					length++;
+					length += _putchar(va_arg(list, int));
 				}
 				else if (*format == 's')
 				{
@@ -35,15 +34,13 @@ int _printf(const char *format, ...)
 				}
 				else if (*format == '%')
 				{
-					_putchar('%');
-					length++;
+					length += _putchar('%');
 				}
 				format++;
 			}
 			else
 			{
-				_putchar(*format);
-				length++;
+				length += _putchar(*format);
 				format++;
 			}
 		}
