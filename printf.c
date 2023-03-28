@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 				format++;
 				if (*format == ' ')
 				{
-					return (1);
+					return (length);
 				}
 				else if (*format == 'c')
 				{
@@ -55,7 +55,7 @@ int _printf(const char *format, ...)
 	}
 	else
 	{
-		return (-1);
+		return (length);
 	}
 	return (length);
 }
